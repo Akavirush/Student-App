@@ -1,13 +1,63 @@
-<div class="container-w">
-  <h1 class="headline">Личный кабинет</h1>
-  <% if current_user %>
-      <h2 class="headline-h2">Добро пожаловать, <%= current_user.login %></h2>
-        <form action="/quit">
-          <p>
-            <input type="submit" class = "sign-button" value="Выход" />
-          </p>
-        </form>
-  <% else %>
-    <h1>Уээээ</h1>
-  <% end %>
-</div>
+<div>
+    <style>
+    header {display:none}
+    footer {display:none}
+    </style>
+    <div class="columns">
+        <div class="nav-bar">
+            <div class="container-logo">
+                <img src="/img/dashboard-logo.svg" class="sp-logo" alt="">
+            </div>
+            <div class="username">
+                <p class="user"><%= current_user.login %></p>
+            </div>
+            <nav class="container-nav-points">
+                <a href="#" class="nav-point"><img src="/icons/icon-news.svg"><p class="point-txt">Материалы</p></a>
+                <a href="#" class="nav-point"><img src="/icons/icon-publications.svg"><p class="point-txt">Публикация</p></a>
+                <a href="#" class="nav-point"><img src="/icons/icon-tv.svg"><p class="point-txt">Программы</p></a>
+                <a href="#" class="nav-point"><img src="/icons/icon-multimedia.svg"><p class="point-txt">Мультимедиа</p></a>
+                <a href="#" class="nav-point"><img src="/icons/icon-users.svg"><p class="point-txt">Пользователи</p></a>
+                <a href="#" class="nav-point"><img src="/icons/icon-support.svg"><p class="point-txt">Обратная связь</p></a>
+                <a href="#" class="nav-point"><img src="/icons/icon-settings.svg"><p class="point-txt">Настройки</p></a>
+            </nav>
+            <% if current_user %>
+                <form action="/quit">
+                <p>
+                    <input type="submit" class = "log-out" value="Выход" />
+                </p>
+                </form>
+                <% else %>
+                    <h1>Уээээ</h1>
+                <% end %>
+        </div>
+        <div class="content">
+            <div class="container-filters"></div>
+            <div class="container-materials">
+                <a href="-" class="material">
+                    <div class="material-text">
+                        <p class="m-headline">Заголовок новости</p>
+                        <p class="m-description">Описание</p>
+                    </div>
+                </a>
+                <a href="-" class="material">
+                    <div class="material-text">
+                        <p class="m-headline">Заголовок новости</p>
+                        <p class="m-description">Описание</p>
+                    </div>
+                </a>
+                <a href="-" class="material">
+                    <div class="material-text">
+                        <p class="m-headline">Заголовок новости</p>
+                        <p class="m-description">Описание</p>
+                    </div>
+                </a>
+                <a href="-" class="material">
+                    <div class="material-text">
+                        <p class="m-headline">Заголовок новости</p>
+                        <p class="m-description">Описание</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+<div>
